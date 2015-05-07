@@ -69,6 +69,7 @@ if [ ! $INSTANCE_ID ]; then
     fi
 else 
     echo -ne "Instance OK, waiting for deployment and public IP info\n"
+    PUBLIC_IP=""
     while [ ! $PUBLIC_IP ]
     do {
     PUBLIC_IP=$(aws ec2 describe-instances \
