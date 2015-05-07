@@ -113,14 +113,6 @@ if [ $# -lt 1 ] ; then
         usage
 fi
 
-if [ ! `which python` ]; then
- install_py
-elif [ `python -V 2>&1|tr -d "."|awk '{print $NF}'|tail -1` -ge 263 ]; then 
-    echo "Python OK"
-else
- install_py 
-fi
-
 LINUXVM=""
 WINDOWSVM=""
 AWSKEYS=""
@@ -134,6 +126,14 @@ do
     esac
   shift
 done
+
+if [ ! `which python` ]; then
+ install_py
+elif [ `python -V 2>&1|tr -d "."|awk '{print $NF}'|tail -1` -ge 263 ]; then 
+    echo "Python OK"
+else
+ install_py 
+fi
 
 if [ ! `echo $PATH | grep ~/bin` ]; then
     export PATH=~/bin:$PATH     # Add ~/bin to $PATH
