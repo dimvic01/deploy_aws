@@ -92,7 +92,6 @@ else
 
     else 
 	echo "INSTANCE_ID=$INSTANCE_ID"
-	echo "PasswordData=$PasswordData"
 	echo "remote access: ssh -i $1.pem ubuntu@$PUBLIC_IP"
     fi
 fi    
